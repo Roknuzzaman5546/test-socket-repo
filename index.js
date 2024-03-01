@@ -4,7 +4,7 @@ const app = express()
 const server = http.createServer(app);
 const io = require('socket.io')(8800, {
     cors: {
-        origin: "http://localhost:5173"
+        origin: "https://rentify-70183.web.app"
     }
 })
 
@@ -39,6 +39,11 @@ io.on("connection", (socket) => {
         io.emit("get-users", activeUsers)
     })
 })
+
+// app.get("/", (req, res) => {
+//     res.send("Socket server is running");
+// });
+
 
 // const express = require("express");
 // const app = express();
